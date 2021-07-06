@@ -1,0 +1,23 @@
+{
+  "name": "Sync cookies",
+  "description": "Sync cookies between team members",
+  "version": "1.0",
+  "manifest_version": 3,
+  "permissions": ["cookies","tabs"],
+  "host_permissions": ["https://*.58.com/"],
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "<all_urls>"
+      ],
+      "all_frames": true,
+      "js": ["content-script.js"]
+    }
+  ]
+}
